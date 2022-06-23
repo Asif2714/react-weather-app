@@ -34,7 +34,7 @@ import home from './assets/img/homeButton.png'
 import tips from './assets/img/bulb.png'
 
 const api = {
-  key: "f767386989a756ea74c86a01258d3664",
+  key: "YOUR-API-KEY", // replace YOUR-API_KEY from an api key you've got from OpenWeatherMap
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
