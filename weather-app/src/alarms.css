@@ -1,0 +1,119 @@
+/*
+* CSS for React Weather App for Farmers
+* Developed in:
+* node    v16.14.0
+* npm     v8.3.1
+* VSCode  v1.65.1
+* Code Contributor for this file: Lawko Saman
+*/
+
+/* Header styling */
+h1 {
+  padding: 40px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+/* Styling for current alarm */
+#currentAlarm{
+  width: 428px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid blue;
+  border-width: 1px;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    text-align: center;
+    font-family: 'monsteratt', sans-serif;
+    width: 428px;
+    /* height: 926; */
+  }
+  
+    /* Styling for all icons */
+.alarm-list img{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  border: solid 1px blue;
+  top: 26px;
+  left: 360px;
+  padding: 3px;
+}
+
+
+/* Positioning for all the weather icons and their text */
+#sunny{
+  position: absolute;
+  top: 300px;
+  left: 10px;
+}
+#sunnyText{
+  position: absolute;
+  top: 405px;
+  left: 28px;
+}
+
+#cloudy{
+  position: absolute;
+  top: 300px;
+  left: 295px;
+}
+#cloudyText{
+  position: absolute;
+  top: 405px;
+  left: 313px;
+}
+
+#windy{
+  position: absolute;
+  top: 480px;
+  left: 10px;
+}
+#windyText{
+  position: absolute;
+  top: 585px;
+  left: 30px;
+}
+
+#rainy{
+  position: absolute;
+  top: 480px;
+  left: 295px;
+}
+#rainyText{
+  position: absolute;
+  top: 585px;
+  left: 320px;
+}
+
+#thunderstorm{
+  position: absolute;
+  top: 660px;
+  left: 10px;
+}
+#thunderstormText{
+  position: absolute;
+  top: 760px;
+  left: 5px;
+}
+
+#snowfall{
+  position: absolute;
+  top: 660px;
+  left: 295px;
+}
+#snowfallText{
+  position: absolute;
+  top: 760px;
+  left: 300px;
+}

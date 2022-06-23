@@ -1,38 +1,528 @@
-.App {
+/*
+* CSS for React Weather App for Farmers
+* Developed in:
+* node    v16.14.0
+* npm     v8.3.1
+* VSCode  v1.65.1
+* Code Contributor for this file: Abdullah Al Asif, Lawko Saman and Leena Neyazi
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body{
   text-align: center;
+  font-family: 'monsteratt', sans-serif;
+  width: 428px;
+  /* height: 926; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Styling for different backgrounds based on different weather conditions */
+.app-default{
+  background-image: url('./assets/default.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-sunny{
+  background-image: url('./assets/sunny.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app-cloudy{
+  background-image: url('./assets/cloudy.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app-snow{
+  background-image: url('./assets/snow.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app-thunder{
+  background-image: url('./assets/thunder.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app-drizzle{
+  background-image: url('./assets/rainy.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app-rainy{
+  background-image: url('./assets/rainy.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app-badweather{
+  background-image: url('./assets/badweather.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
 }
 
-.App-header {
-  background-color: #282c34;
+main{
+  text-align: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+  /* padding: 25px; */
+}
+
+/* Weather alarm logo styling */
+.alarm img{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  border: solid 1px blue;
+  width: 50px;
+  height: 50px;
+  top: 26px;
+  left: 360px;
+  padding: 3px;
+}
+.alarm-text{
+  position: absolute;
+  top: 80px;
+  left: 354px;
   color: white;
+  text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
 }
 
-.App-link {
-  color: #61dafb;
+/* Recent addresses logo styling */
+.recent img{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  border: solid 1px blue;
+  width: 50px;
+  height: 50px;
+  top: 26px;
+  left: 20px;
+  padding: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.recent-text{
+  position: absolute;
+  top: 80px;
+  left: 5px;
+  color: white;
+  text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
 }
+
+
+/* Stylings for search box */
+.search-box{
+  padding-top: 15px;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.search-box .search-bar{
+
+  position: relative;
+  display: inline-block;
+
+  /* display: block; */
+  width: 60%;
+  padding: 15px;
+
+  appearance: none;
+  background: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: blue;
+  border-width: 2px;
+  border-radius: 16px 16px 16px 16px;
+
+  margin-top: 0px;
+
+  font-family: sans-serif;
+  color: white;
+
+  text-align: center;
+  font-size: 30px;
+
+  /* text shadow for similar text */
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+
+  box-shadow: 0px 5px rgba(0, green, blue, alpha);
+}
+/* End of styling for search */
+
+
+/* Styling for location */
+.location-box .location{
+  color: #ffff;
+  font-size: 38px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow:-1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+  line-height: 1.1;
+}
+
+.location-box .date{
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+  line-height: 1.3;
+}
+
+#curr-add-text{
+  font-size: 18px;
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+}
+/* end of styling for location */
+
+
+/* styling for weather box */
+.weather-box{
+  text-align: center;
+
+}
+
+.weather-box .temp{
+  position:relative;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+
+  color: #FFF;
+  font-size: 56px;
+  font-weight:400;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid blue;
+  border-width: 2px;
+}
+
+.weather-box .weather{
+  color: #FFF;
+  font-size: 28px;
+  font-weight: 700;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+}
+
+.temp{
+  width: 300px;
+  text-align: left;
+  height: 140px;
+}
+
+.current-temp{
+text-align: center;
+  font-size: 0.6em;
+  float: left;
+}
+
+.current-degree{
+  font-size: 2em;
+}
+
+#weather-type{
+  float: right;
+  position: absolute;
+  right:25px;
+  top: 0px;
+  font-size: 0.3em;
+}
+.weather-type-text{
+  font-size: 1.7em;
+}
+/* end of styling for weather box */
+
+
+/* styling for time */
+.time{
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 700;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+/* end of styling for time */
+
+/* styling for weather warning */
+.weather-warning{
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid blue;
+  border-width: 2px;
+  width: 428px;
+  height: 70px;
+  padding: 1em;
+}
+
+.warning-logo{
+  float: left;
+}
+
+.warning-text{
+  float: left;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 500;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+
+}
+
+.warning-details{
+  padding-top: 0.1em;
+  padding-left: 8.3em;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+}
+/* End of styling for warning */
+
+/* Styling for components */
+.weather-components{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid blue;
+  border-width: 2px;
+  width: 428px;
+  height: 145px;
+  text-align: left;
+  margin-top: 2em;
+  padding: 0.7em;
+  color: #FFF;
+  font-weight: 500;
+  text-align:center;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+  border-color: blue;
+
+
+}
+
+.comp-windspeed{
+  margin-left: 1em;
+  float: left;
+  text-align: center;
+  font-size: 20px;
+}
+
+.comp-precipitation{
+  margin-left: 1.55em;
+  float: left;
+  text-align: center;
+  font-size: 20px;
+
+}
+.comp-visibility{
+  float: right;
+  text-align: center;
+  margin-right: 1em;
+  font-size: 20px;
+}
+/* End of styling for components */
+
+
+/* Styling for forecasts */
+.weather-forecast{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: solid blue;
+  border-width: 2px;
+  width: 428px;
+  height: 145px;
+  text-align: left;
+  margin-top: 2em;
+  padding: 0.7em;
+  color: #FFF;
+  font-weight: 500;
+  text-align:center;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+  border-color: blue;
+
+
+}
+
+.weather-forecast p{
+  font-size: 20px;
+}
+
+.forecast-1{
+  float: left;
+}
+.forecast-2{
+  float: left;
+  margin-left: 1.3em;
+}
+.forecast-3{
+  float: left;
+  margin-left: 2.2em;
+}
+.forecast-4{
+  float: right;
+}
+/* End of styling for forecasts */
+
+/* styling for navbar */
+.navbar{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 428px;
+  height: 60px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: blue;
+  border-width: 2px;
+}
+
+.navButtons{
+  border-radius: 16px;
+  border: 3px solid black;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 80px;
+  height: 50px;
+}
+
+#backButton{
+  position: absolute;
+  left : 5px;
+  top: 5px;
+  border: 3px solid red;
+
+}
+
+#homeButton{
+  position: absolute;
+  top: 5px;
+  left: 180px;
+  border: 3px solid blue;
+}
+
+#tipsButton{
+  position: absolute;
+  left: 340px;
+  bottom: 5px;
+  z-index: 10;
+  border: 3px solid green;
+}
+
+#clearButton
+{
+  position: absolute;
+  left: 340px;
+  bottom: 5px;
+  z-index: 10;
+  border: 3px solid green;
+}
+
+
+/* End of styling for navbar */
+
+
+/* Styling for address */
+.address-box{
+  position: relative;
+  display: inline-block;
+  width: 370px;
+  padding: 10px;
+  margin: 0 0 10px;
+  
+  border: 2px solid blue;
+  border-radius: 16px 16px 16px 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
+
+.address-page{
+  background-image: url('./assets/default.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+
+.address-page .address-box, h1, h2{
+  color: #ffff;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow:-1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+  line-height: 1.1;
+}
+
+.address-page h1{
+  padding-top: 15px;
+}
+
+.address-page h2{
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+
+
+
+/* END OF STYLESHEET */

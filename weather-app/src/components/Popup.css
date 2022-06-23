@@ -1,0 +1,41 @@
+/*
+* CSS for Popup
+* 
+* Code Contributor for this file: Abdullah Al Asif
+*/
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 428px;
+    background-color: (0,0,0,0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.popup-inner{
+    position: absolute;
+    top: 400px;
+    padding: 32px;
+    width: 90%;
+    max-width: 640px;
+background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.popup-inner h3{
+    font-weight: bolder;
+}
+
+.popup-inner .close-btn{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+/* END OF CSS FOR POPUP */
